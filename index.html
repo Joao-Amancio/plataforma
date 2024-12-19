@@ -9,54 +9,56 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #d4d3d3;
+        /*  background-color: #d4d3d3;*/
+        background: rgb(56, 56, 56);
       }
 
       h1 {
+        font-size: 2em;
         text-align: center;
+        color: #333;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
       }
 
-        .search-bar {
-  position: relative;
-  margin-bottom: 20px;
-  text-align: center;
-  width: 100%; /* Garante que a barra ocupe 100% da largura disponível */
-  max-width: 600px; /* Define uma largura máxima para telas maiores */
-  margin-left: auto; /* Centraliza horizontalmente */
-  margin-right: auto; /* Centraliza horizontalmente */
-}
+      .search-bar {
+        position: relative;
+        margin-bottom: 20px;
+        text-align: center;
+        width: 100%; /* Garante que a barra ocupe 100% da largura disponível */
+        max-width: 600px; /* Define uma largura máxima para telas maiores */
+        margin-left: auto; /* Centraliza horizontalmente */
+        margin-right: auto; /* Centraliza horizontalmente */
+      }
 
-.search-bar input {
-  width: 100%; /* Ocupa 100% da largura do contêiner pai */
-  padding: 10px 40px 10px 40px; /* Espaco para o ícone à esquerda e margem à direita */
-  font-size: 16px; /* Tamanho de fonte que poderá ser ajustado conforme necessário */
-  border: 1px solid #ccc;
-  border-radius: 25px;
-  box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
-}
+      .search-bar input {
+        width: 100%; /* Ocupa 100% da largura do contêiner pai */
+        padding: 10px 40px 10px 40px; /* Espaco para o ícone à esquerda e margem à direita */
+        font-size: 16px; /* Tamanho de fonte que poderá ser ajustado conforme necessário */
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+      }
 
-.search-icon {
-  position: absolute;
-  left: 15px; /* Ajuste conforme necessário */
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px; /* Tamanho do ícone */
-  color: #999; /* Cor do ícone */
-}
+      .search-icon {
+        position: absolute;
+        left: 15px; /* Ajuste conforme necessário */
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px; /* Tamanho do ícone */
+        color: #999; /* Cor do ícone */
+      }
 
-/* Media queries para ajustar o tamanho da fonte e do ícone em telas menores */
-@media (max-width: 600px) {
-  .search-bar input {
-    font-size: 14px; /* Diminui o tamanho da fonte em telas pequenas */
-    padding: 10px 35px; /* Ajuste o padding se necessário */
-  }
-  
-  .search-icon {
-    font-size: 18px; /* Diminui o tamanho do ícone em telas pequenas */
-  }
-}
+      /* Media queries para ajustar o tamanho da fonte e do ícone em telas menores */
+      @media (max-width: 600px) {
+        .search-bar input {
+          font-size: 14px; /* Diminui o tamanho da fonte em telas pequenas */
+          padding: 10px 35px; /* Ajuste o padding se necessário */
+        }
 
-
+        .search-icon {
+          font-size: 18px; /* Diminui o tamanho do ícone em telas pequenas */
+        }
+      }
 
       .video-container {
         display: flex;
@@ -73,7 +75,7 @@
         max-width: 500px;
         margin: 10px auto; /* Reduz a margem inferior para 5px */
         border: 1px solid #ddd;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 10px rgba(8, 8, 8, 0.736);
         background-color: #f9f9f9;
       }
 
@@ -83,7 +85,7 @@
         padding: 10px;
         background-color: #d4d3d3;
         border: 1px solid #ddd;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 10px rgb(224, 223, 223);
         padding-bottom: 0; /* Reduz padding inferior se necessário */
       }
 
@@ -92,6 +94,7 @@
         height: 30%; /* Mantém a proporção do vídeo */
         margin-top: 25px;
         border: 2px solid black;
+        border-radius: 20px;
       }
 
       .descricao {
@@ -125,6 +128,71 @@
       .hidden {
         display: none;
       }
+
+      .back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(46, 49, 51);
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
+  border-radius: 50%;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  z-index: 1000;
+}
+
+.back-to-top {
+  -webkit-tap-highlight-color: transparent; /* Remove o flash azul em dispositivos Android */
+  outline: none; /* Remove o contorno de foco */
+}
+
+.back-to-top:hover {
+  opacity: 9;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+  color: #fff;
+}
+
+#social-links {
+  -webkit-tap-highlight-color: transparent; /* Remove o flash azul em dispositivos Android */
+  outline: none; /* Remove o contorno de foco */
+}
+
+#social-links a {
+  -webkit-tap-highlight-color: transparent; /* Remove o flash azul em dispositivos Android */
+  outline: none; /* Remove o contorno de foco */
+}
+
+#social-links a:hover {
+  background: #474b4f;
+}
     </style>
     <link
       rel="stylesheet"
@@ -168,7 +236,7 @@
               data-pdf="pdfs/Coragem.pdf"
               data-name="Coragem.pdf"
             >
-              Baixar PDF do Vídeo 1
+              Baixar PDF da Aula 1
             </button>
           </div>
         </div>
@@ -197,7 +265,7 @@
               data-pdf="pdfs/Adoração-extravagante-Santidade-e-Amor.pdf"
               data-name="Adoração-extravagante-Santidade-e-Amor.pdf"
             >
-              Baixar PDF do Vídeo 2
+              Baixar PDF da Aula 2
             </button>
           </div>
         </div>
@@ -229,7 +297,7 @@
               data-pdf="pdfs/video3.pdf"
               data-name="video3.pdf"
             >
-              Baixar PDF do Vídeo 3
+              Baixar PDF da Aula 3
             </button>
           </div>
         </div>
@@ -257,7 +325,7 @@
               data-pdf="pdfs/video4.pdf"
               data-name="video4.pdf"
             >
-              Baixar PDF do Vídeo 4
+              Baixar PDF da Aula 4
             </button>
           </div>
         </div>
@@ -288,7 +356,7 @@
               data-pdf="pdfs/video5.pdf"
               data-name="video5.pdf"
             >
-              Baixar PDF do Vídeo 5
+              Baixar PDF da Aula 5
             </button>
           </div>
         </div>
@@ -316,7 +384,7 @@
               data-pdf="pdfs/video6.pdf"
               data-name="video6.pdf"
             >
-              Baixar PDF do Vídeo 6
+              Baixar PDF da Aula 6
             </button>
           </div>
         </div>
@@ -346,7 +414,7 @@
               data-pdf="pdfs/video7.pdf"
               data-name="video7.pdf"
             >
-              Baixar PDF do Vídeo 7
+              Baixar PDF da Aula 7
             </button>
           </div>
         </div>
@@ -375,7 +443,7 @@
               data-pdf="pdfs/video8.pdf"
               data-name="video8.pdf"
             >
-              Baixar PDF do Vídeo 8
+              Baixar PDF da Aula 8
             </button>
           </div>
         </div>
@@ -405,7 +473,7 @@
               data-pdf="pdfs/video9.pdf"
               data-name="video9.pdf"
             >
-              Baixar PDF do Vídeo 9
+              Baixar PDF da Aula 9
             </button>
           </div>
         </div>
@@ -434,7 +502,7 @@
               data-pdf="pdfs/video10.pdf"
               data-name="video10.pdf"
             >
-              Baixar PDF do Vídeo 10
+              Baixar PDF da Aula 10
             </button>
           </div>
         </div>
@@ -463,7 +531,7 @@
               data-pdf="pdfs/video11.pdf"
               data-name="video11.pdf"
             >
-              Baixar PDF do Vídeo 11
+              Baixar PDF da Aula 11
             </button>
           </div>
         </div>
@@ -491,13 +559,40 @@
               data-pdf="pdfs/video12.pdf"
               data-name="video12.pdf"
             >
-              Baixar PDF do Vídeo 12
+              Baixar PDF da Aula 12
             </button>
           </div>
         </div>
       </div>
     </div>
 
+    <footer>
+      
+      <div id="social-links">
+        <a href="https://instagram.com/junior.amancio" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon
+        ></a>
+        <a href="https://youtube.com/amancio131079" target="_blank">
+          <ion-icon name="logo-youtube"></ion-icon
+        ></a>
+        <a href="https://www.facebook.com/?locale=pt_BR" title="Facebook" target="_blank">
+         <ion-icon name="logo-facebook"></ion-icon>  
+        </a>
+        <a href="https://wa.me/5581996174799" target="_blank">
+         <ion-icon name="logo-whatsapp"></ion-icon>  
+        </a>
+      </div>
+      <p>&copy; 2025 Plataforma criado por: <br><br><button class="a"><a style="color: rgb(32, 137, 241); font-weight: bold; background: none;" href="https://wa.me/5581996174799" target="_blank">Amancio JR.</a></button>  <br><br> Volte Sempre!!!</p>
+    </footer>
+<a href="#" class="back-to-top" id="back-to-top">&#8679;</a>
+<script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script>
       // Adicione o evento de clique nos botões para baixar o PDF
       const pdfButtons = document.querySelectorAll(".pdf-button")
@@ -555,5 +650,57 @@
           })
         })
     </script>
+    <script>
+// PROTEÇÃO DE IMAGEM E VIDEO
+
+// Desativa o menu de contexto (botão direito do mouse) para toda a página
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+// Função para desativar toques longos em elementos específicos
+function preventLongPress(element) {
+  element.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 1) {
+      this.touchStartTime = e.timeStamp;
+    }
+  }, { passive: true });
+
+  element.addEventListener('touchend', function(e) {
+    let touchDuration = e.timeStamp - this.touchStartTime;
+    if (touchDuration > 500) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+}
+
+// Aplicar a função nas imagens e vídeos
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('.image-container img');
+  const videos = document.querySelectorAll('video');
+
+  images.forEach(img => preventLongPress(img));
+  videos.forEach(video => preventLongPress(video));
+});
+</script>
+<script>
+// Evento de clique para a seta "Voltar ao topo"
+document.addEventListener("DOMContentLoaded", function () {
+  var backToTopButton = document.getElementById("back-to-top")
+
+  window.addEventListener("scroll", function () {
+    if (window.pageYOffset > 300) {
+      backToTopButton.style.display = "block"
+    } else {
+      backToTopButton.style.display = "none"
+    }
+  })
+
+  backToTopButton.addEventListener("click", function (event) {
+    event.preventDefault()
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  })
+})
+</script>
   </body>
 </html>
