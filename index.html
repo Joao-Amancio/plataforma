@@ -16,43 +16,47 @@
         text-align: center;
       }
 
-      .search-bar {
-        position: relative;
-        margin-bottom: 20px;
-        text-align: center;
-      }
+        .search-bar {
+  position: relative;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%; /* Garante que a barra ocupe 100% da largura disponível */
+  max-width: 600px; /* Define uma largura máxima para telas maiores */
+  margin-left: auto; /* Centraliza horizontalmente */
+  margin-right: auto; /* Centraliza horizontalmente */
+}
 
-      .search-bar input {
-        width: 100%;
-        max-width: 400px;
-        padding: 10px 40px 10px 30px; /* Aumente o padding-left para dar espaço ao ícone */
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 25px;
-        box-sizing: border-box;
-      }
+.search-bar input {
+  width: 100%; /* Ocupa 100% da largura do contêiner pai */
+  padding: 10px 40px 10px 40px; /* Espaco para o ícone à esquerda e margem à direita */
+  font-size: 16px; /* Tamanho de fonte que poderá ser ajustado conforme necessário */
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+}
 
-      .search-icon {
-        position: absolute;
-        left: 770px; /* Ajuste conforme necessário */
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 20px; /* Tamanho do ícone */
-        color: #999; /* Cor do ícone */
-      }
+.search-icon {
+  position: absolute;
+  left: 15px; /* Ajuste conforme necessário */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px; /* Tamanho do ícone */
+  color: #999; /* Cor do ícone */
+}
 
-      /* Media queries para ajustar o tamanho da fonte e do ícone em telas menores */
-      @media (max-width: 600px) {
-        .search-bar input {
-          font-size: 14px; /* Diminui o tamanho da fonte em telas pequenas */
-          padding: 10px 35px; /* Ajuste o padding se necessário */
-        }
+/* Media queries para ajustar o tamanho da fonte e do ícone em telas menores */
+@media (max-width: 600px) {
+  .search-bar input {
+    font-size: 14px; /* Diminui o tamanho da fonte em telas pequenas */
+    padding: 10px 35px; /* Ajuste o padding se necessário */
+  }
+  
+  .search-icon {
+    font-size: 18px; /* Diminui o tamanho do ícone em telas pequenas */
+  }
+}
 
-        .search-icon {
-          font-size: 18px; /* Diminui o tamanho do ícone em telas pequenas */
-          left: 400px; /* Ajuste conforme necessário */
-        }
-      }
+
 
       .video-container {
         display: flex;
