@@ -16,25 +16,49 @@
         text-align: center;
       }
 
-       .search-bar {
-      margin-bottom: 20px;
-      text-align: center;
-    }
+      .search-bar {
+        position: relative;
+        margin-bottom: 20px;
+        text-align: center;
+      }
 
-    .search-bar input {
-      width: 80%;
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
+      .search-bar input {
+        width: 100%;
+        max-width: 400px;
+        padding: 10px 40px 10px 30px; /* Aumente o padding-left para dar espaço ao ícone */
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+      }
+
+      .search-icon {
+        position: absolute;
+        left: 770px; /* Ajuste conforme necessário */
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px; /* Tamanho do ícone */
+        color: #999; /* Cor do ícone */
+      }
+
+      /* Media queries para ajustar o tamanho da fonte e do ícone em telas menores */
+      @media (max-width: 600px) {
+        .search-bar input {
+          font-size: 14px; /* Diminui o tamanho da fonte em telas pequenas */
+          padding: 10px 35px; /* Ajuste o padding se necessário */
+        }
+
+        .search-icon {
+          font-size: 18px; /* Diminui o tamanho do ícone em telas pequenas */
+          left: 400px; /* Ajuste conforme necessário */
+        }
+      }
 
       .video-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         margin-bottom: 20px; /* Remove qualquer margem inferior extra */
-        
       }
 
       .video {
@@ -64,7 +88,6 @@
         height: 30%; /* Mantém a proporção do vídeo */
         margin-top: 25px;
         border: 2px solid black;
-        
       }
 
       .descricao {
@@ -92,21 +115,29 @@
         .video {
           width: 100%; /* Faz com que o vídeo ocupe toda a largura da tela em dispositivos móveis */
           max-width: 100%; /* Remove restrições de largura máxima */
-        }        
+        }
       }
 
       .hidden {
-      display: none;
-    }
-
+        display: none;
+      }
     </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <div class="container">
       <h1>Plataforma de Vídeos</h1>
-       <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Pesquise a Aula que Deseja Assistir...">
-    </div>
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Pesquise a Aula que Deseja Assistir..."
+        />
+      </div>
       <div class="video-container">
         <div class="video">
           <video controls>
@@ -119,9 +150,22 @@
           <div class="descricao">
             <h2>Aula 1</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum mollitia aspernatur tempora voluptatum nam at reprehenderit, ipsa quos, accusamus deserunt quae aliquid vero. Eaque corrupti similique blanditiis vel cumque voluptatum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur consequatur dicta voluptatum quasi iste eum odio ipsam, minima dolor hic natus laudantium ullam, laboriosam quidem dignissimos deleniti. Labore, quidem corrupti?
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum
+              mollitia aspernatur tempora voluptatum nam at reprehenderit, ipsa
+              quos, accusamus deserunt quae aliquid vero. Eaque corrupti
+              similique blanditiis vel cumque voluptatum. Lorem ipsum dolor sit,
+              amet consectetur adipisicing elit. Tenetur consequatur dicta
+              voluptatum quasi iste eum odio ipsam, minima dolor hic natus
+              laudantium ullam, laboriosam quidem dignissimos deleniti. Labore,
+              quidem corrupti?
             </p>
-            <button class="pdf-button" data-pdf="pdfs/Coragem.pdf" data-name="Coragem.pdf">Baixar PDF do Vídeo 1</button>
+            <button
+              class="pdf-button"
+              data-pdf="pdfs/Coragem.pdf"
+              data-name="Coragem.pdf"
+            >
+              Baixar PDF do Vídeo 1
+            </button>
           </div>
         </div>
         <div class="video">
@@ -135,16 +179,28 @@
           <div class="descricao">
             <h2>Aula 2</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor sunt voluptatem culpa quas, error quae necessitatibus ut aperiam quasi doloremque. Consectetur atque ipsum libero, ipsam unde earum illum iure? Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat tempore dolor quibusdam iste, reprehenderit molestiae accusantium voluptates labore omnis iusto, esse ut odio voluptatem rerum. Dignissimos soluta animi dolore labore!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+              dolor sunt voluptatem culpa quas, error quae necessitatibus ut
+              aperiam quasi doloremque. Consectetur atque ipsum libero, ipsam
+              unde earum illum iure? Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Fugiat tempore dolor quibusdam iste,
+              reprehenderit molestiae accusantium voluptates labore omnis iusto,
+              esse ut odio voluptatem rerum. Dignissimos soluta animi dolore
+              labore!
             </p>
-            <button class="pdf-button" data-pdf="pdfs/Adoração-extravagante-Santidade-e-Amor.pdf" data-name="Adoração-extravagante-Santidade-e-Amor.pdf">Baixar PDF do Vídeo 2</button>
+            <button
+              class="pdf-button"
+              data-pdf="pdfs/Adoração-extravagante-Santidade-e-Amor.pdf"
+              data-name="Adoração-extravagante-Santidade-e-Amor.pdf"
+            >
+              Baixar PDF do Vídeo 2
+            </button>
           </div>
         </div>
 
-
         <!--  Aqui copia -->
 
-          <div class="video">
+        <div class="video">
           <video controls>
             <source
               src="./assets/WhatsApp Video 2024-06-11 at 06.51.24.mp4"
@@ -155,9 +211,22 @@
           <div class="descricao">
             <h2>Aula 3</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptatibus, tempore veritatis quis, voluptas iusto nulla magnam maxime asperiores modi vel harum explicabo quidem et qui beatae, deleniti laborum sed! Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolorem quidem reiciendis dolorum suscipit voluptatem aperiam, commodi aut facilis similique soluta ut perferendis libero repellendus tempore beatae! Illum, quibusdam inventore?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+              voluptatibus, tempore veritatis quis, voluptas iusto nulla magnam
+              maxime asperiores modi vel harum explicabo quidem et qui beatae,
+              deleniti laborum sed! Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Recusandae dolorem quidem reiciendis dolorum
+              suscipit voluptatem aperiam, commodi aut facilis similique soluta
+              ut perferendis libero repellendus tempore beatae! Illum, quibusdam
+              inventore?
             </p>
-            <button class="pdf-button" data-pdf="pdfs/video3.pdf" data-name="video3.pdf">Baixar PDF do Vídeo 3</button>
+            <button
+              class="pdf-button"
+              data-pdf="pdfs/video3.pdf"
+              data-name="video3.pdf"
+            >
+              Baixar PDF do Vídeo 3
+            </button>
           </div>
         </div>
         <div class="video">
@@ -171,9 +240,21 @@
           <div class="descricao">
             <h2>Aula 4</h2>
             <p>
-             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos non vel enim expedita pariatur quos unde, quas molestias adipisci fuga saepe sit. Eaque, aliquam! Libero eos dolorum ea placeat illo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, omnis ullam incidunt laudantium dicta esse reprehenderit vero perspiciatis ad non doloribus facere consectetur quidem sint molestiae cupiditate neque itaque ex!
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos non
+              vel enim expedita pariatur quos unde, quas molestias adipisci fuga
+              saepe sit. Eaque, aliquam! Libero eos dolorum ea placeat illo?
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptate, omnis ullam incidunt laudantium dicta esse
+              reprehenderit vero perspiciatis ad non doloribus facere
+              consectetur quidem sint molestiae cupiditate neque itaque ex!
             </p>
-            <button class="pdf-button" data-pdf="pdfs/video4.pdf" data-name="video4.pdf">Baixar PDF do Vídeo 4</button>
+            <button
+              class="pdf-button"
+              data-pdf="pdfs/video4.pdf"
+              data-name="video4.pdf"
+            >
+              Baixar PDF do Vídeo 4
+            </button>
           </div>
         </div>
 
@@ -190,9 +271,21 @@
           <div class="descricao">
             <h2>Aula 5</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam beatae sequi amet aut tempora, velit consequuntur ad minima aspernatur praesentium vero esse iusto natus quos provident illum quam aperiam unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae iste incidunt impedit porro, veniam facere, mollitia aspernatur, quibusdam eos dolores amet a adipisci. Quis harum, voluptatum molestias eos ducimus unde!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+              beatae sequi amet aut tempora, velit consequuntur ad minima
+              aspernatur praesentium vero esse iusto natus quos provident illum
+              quam aperiam unde. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Beatae iste incidunt impedit porro, veniam
+              facere, mollitia aspernatur, quibusdam eos dolores amet a
+              adipisci. Quis harum, voluptatum molestias eos ducimus unde!
             </p>
-            <button class="pdf-button" data-pdf="pdfs/video5.pdf" data-name="video5.pdf">Baixar PDF do Vídeo 5</button>
+            <button
+              class="pdf-button"
+              data-pdf="pdfs/video5.pdf"
+              data-name="video5.pdf"
+            >
+              Baixar PDF do Vídeo 5
+            </button>
           </div>
         </div>
         <div class="video">
@@ -206,9 +299,21 @@
           <div class="descricao">
             <h2>Aula 6</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nulla eius enim commodi aspernatur? Aliquam itaque error enim eos nulla mollitia adipisci aliquid, aperiam velit unde eius, veniam quo odio! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, veritatis illo commodi vel quibusdam ea repudiandae sint, minima mollitia numquam at eius enim animi dolore sequi non consectetur impedit blanditiis?
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore
+              nulla eius enim commodi aspernatur? Aliquam itaque error enim eos
+              nulla mollitia adipisci aliquid, aperiam velit unde eius, veniam
+              quo odio! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Ipsa, veritatis illo commodi vel quibusdam ea repudiandae sint,
+              minima mollitia numquam at eius enim animi dolore sequi non
+              consectetur impedit blanditiis?
             </p>
-            <button class="pdf-button" data-pdf="pdfs/video6.pdf" data-name="video6.pdf">Baixar PDF do Vídeo 6</button>
+            <button
+              class="pdf-button"
+              data-pdf="pdfs/video6.pdf"
+              data-name="video6.pdf"
+            >
+              Baixar PDF do Vídeo 6
+            </button>
           </div>
         </div>
 
@@ -223,9 +328,22 @@
           <div class="descricao">
             <h2>Aula 7</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum dignissimos reprehenderit mollitia illo placeat harum? Doloremque pariatur accusantium nisi alias impedit consequuntur voluptas voluptates corporis incidunt voluptatum blanditiis, porro recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat molestiae tenetur exercitationem, repellendus earum perspiciatis magnam aliquid debitis eaque officia aut deserunt velit quas! Fuga quo ratione facere. Illum, magni.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum
+              dignissimos reprehenderit mollitia illo placeat harum? Doloremque
+              pariatur accusantium nisi alias impedit consequuntur voluptas
+              voluptates corporis incidunt voluptatum blanditiis, porro
+              recusandae. Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Fugiat molestiae tenetur exercitationem, repellendus earum
+              perspiciatis magnam aliquid debitis eaque officia aut deserunt
+              velit quas! Fuga quo ratione facere. Illum, magni.
             </p>
-            <button class="pdf-button" data-pdf="pdfs/video7.pdf" data-name="video7.pdf">Baixar PDF do Vídeo 7</button>
+            <button
+              class="pdf-button"
+              data-pdf="pdfs/video7.pdf"
+              data-name="video7.pdf"
+            >
+              Baixar PDF do Vídeo 7
+            </button>
           </div>
         </div>
         <div class="video">
@@ -239,9 +357,22 @@
           <div class="descricao">
             <h2>Aula 8</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum laborum iure rem rerum excepturi corrupti quas nobis delectus debitis. Iure perspiciatis beatae veniam totam corrupti, maiores suscipit nam dolor expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nostrum, officia laudantium iusto sequi nemo delectus molestiae exercitationem placeat corrupti ex adipisci ipsam vitae illo magnam dicta, deserunt sed ratione.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              laborum iure rem rerum excepturi corrupti quas nobis delectus
+              debitis. Iure perspiciatis beatae veniam totam corrupti, maiores
+              suscipit nam dolor expedita. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Libero nostrum, officia laudantium
+              iusto sequi nemo delectus molestiae exercitationem placeat
+              corrupti ex adipisci ipsam vitae illo magnam dicta, deserunt sed
+              ratione.
             </p>
-            <button class="pdf-button" data-pdf="pdfs/video8.pdf" data-name="video8.pdf">Baixar PDF do Vídeo 8</button>
+            <button
+              class="pdf-button"
+              data-pdf="pdfs/video8.pdf"
+              data-name="video8.pdf"
+            >
+              Baixar PDF do Vídeo 8
+            </button>
           </div>
         </div>
 
@@ -256,9 +387,22 @@
           <div class="descricao">
             <h2>Aula 9</h2>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos repellat repudiandae, delectus, eos voluptatem ad assumenda reiciendis quisquam, officia quaerat recusandae corporis adipisci quam unde voluptatibus doloribus placeat numquam voluptates. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus quo minima blanditiis! Qui laborum nobis laudantium, tempore, reprehenderit nulla cumque accusantium veritatis adipisci nemo quas tenetur, alias quis eius. Recusandae.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+              repellat repudiandae, delectus, eos voluptatem ad assumenda
+              reiciendis quisquam, officia quaerat recusandae corporis adipisci
+              quam unde voluptatibus doloribus placeat numquam voluptates.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Accusamus quo minima blanditiis! Qui laborum nobis laudantium,
+              tempore, reprehenderit nulla cumque accusantium veritatis adipisci
+              nemo quas tenetur, alias quis eius. Recusandae.
             </p>
-            <button class="pdf-button" data-pdf="pdfs/video9.pdf" data-name="video9.pdf">Baixar PDF do Vídeo 9</button>
+            <button
+              class="pdf-button"
+              data-pdf="pdfs/video9.pdf"
+              data-name="video9.pdf"
+            >
+              Baixar PDF do Vídeo 9
+            </button>
           </div>
         </div>
         <div class="video">
@@ -272,9 +416,22 @@
           <div class="descricao">
             <h2>Aula 10</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, odio! Quae quasi distinctio impedit! Nostrum neque cum vitae consequuntur, nisi fugit? Aliquid dolorum distinctio magni recusandae ea consequatur explicabo optio! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quis sapiente, repellat eveniet accusantium autem consequatur hic? Eum eligendi aperiam id sequi incidunt natus libero aliquid? Suscipit voluptatum exercitationem assumenda.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
+              odio! Quae quasi distinctio impedit! Nostrum neque cum vitae
+              consequuntur, nisi fugit? Aliquid dolorum distinctio magni
+              recusandae ea consequatur explicabo optio! Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Rem quis sapiente, repellat
+              eveniet accusantium autem consequatur hic? Eum eligendi aperiam id
+              sequi incidunt natus libero aliquid? Suscipit voluptatum
+              exercitationem assumenda.
             </p>
-            <button class="pdf-button" data-pdf="pdfs/video10.pdf" data-name="video10.pdf">Baixar PDF do Vídeo 10</button>
+            <button
+              class="pdf-button"
+              data-pdf="pdfs/video10.pdf"
+              data-name="video10.pdf"
+            >
+              Baixar PDF do Vídeo 10
+            </button>
           </div>
         </div>
 
@@ -289,9 +446,21 @@
           <div class="descricao">
             <h2>Aula 11</h2>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum nemo aperiam provident accusantium est, sapiente quo nisi quas quos aliquam aliquid, architecto sint expedita similique ut officia modi blanditiis porro? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni sequi, totam autem numquam dolorem cumque debitis. Harum vitae esse deserunt fuga in ratione quasi? Error eligendi reprehenderit qui esse nisi.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum nemo
+              aperiam provident accusantium est, sapiente quo nisi quas quos
+              aliquam aliquid, architecto sint expedita similique ut officia
+              modi blanditiis porro? Lorem ipsum dolor sit amet consectetur,
+              adipisicing elit. Magni sequi, totam autem numquam dolorem cumque
+              debitis. Harum vitae esse deserunt fuga in ratione quasi? Error
+              eligendi reprehenderit qui esse nisi.
             </p>
-            <button class="pdf-button" data-pdf="pdfs/video11.pdf" data-name="video11.pdf">Baixar PDF do Vídeo 11</button>
+            <button
+              class="pdf-button"
+              data-pdf="pdfs/video11.pdf"
+              data-name="video11.pdf"
+            >
+              Baixar PDF do Vídeo 11
+            </button>
           </div>
         </div>
         <div class="video">
@@ -305,32 +474,43 @@
           <div class="descricao">
             <h2>Aula 12</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat culpa a sed deserunt nam placeat quos sit in qui iste, rem atque corrupti cum, maiores voluptatem ipsam voluptates doloribus perspiciatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dolorum nobis porro quidem animi libero quisquam autem praesentium quas, odio id quae rerum facilis debitis blanditiis accusamus ducimus aut maxime.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+              culpa a sed deserunt nam placeat quos sit in qui iste, rem atque
+              corrupti cum, maiores voluptatem ipsam voluptates doloribus
+              perspiciatis! Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Nemo dolorum nobis porro quidem animi libero quisquam autem
+              praesentium quas, odio id quae rerum facilis debitis blanditiis
+              accusamus ducimus aut maxime.
             </p>
-            <button class="pdf-button" data-pdf="pdfs/video12.pdf" data-name="video12.pdf">Baixar PDF do Vídeo 12</button>
+            <button
+              class="pdf-button"
+              data-pdf="pdfs/video12.pdf"
+              data-name="video12.pdf"
+            >
+              Baixar PDF do Vídeo 12
+            </button>
           </div>
         </div>
-
       </div>
     </div>
 
     <script>
       // Adicione o evento de clique nos botões para baixar o PDF
-      const pdfButtons = document.querySelectorAll(".pdf-button");
+      const pdfButtons = document.querySelectorAll(".pdf-button")
 
-pdfButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const pdfUrl = button.getAttribute("data-pdf");
-    const fileName = button.getAttribute("data-name");
+      pdfButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const pdfUrl = button.getAttribute("data-pdf")
+          const fileName = button.getAttribute("data-name")
 
-    const link = document.createElement("a");
-    link.href = pdfUrl;
-    link.download = fileName;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  });
-});
+          const link = document.createElement("a")
+          link.href = pdfUrl
+          link.download = fileName
+          document.body.appendChild(link)
+          link.click()
+          document.body.removeChild(link)
+        })
+      })
     </script>
 
     <script>
@@ -346,23 +526,30 @@ pdfButtons.forEach((button) => {
       })
     </script>
 
-     <script>
-    // Função de pesquisa
-    document.getElementById('searchInput').addEventListener('input', function() {
-      const searchTerm = this.value.toLowerCase().trim();
-      const videos = document.querySelectorAll('.video');
+    <script>
+      // Função de pesquisa
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", function () {
+          const searchTerm = this.value.toLowerCase().trim()
+          const videos = document.querySelectorAll(".video")
 
-      videos.forEach(video => {
-        const title = video.querySelector('h2').textContent.toLowerCase();
-        const description = video.querySelector('p').textContent.toLowerCase();
+          videos.forEach((video) => {
+            const title = video.querySelector("h2").textContent.toLowerCase()
+            const description = video
+              .querySelector("p")
+              .textContent.toLowerCase()
 
-        if (title.includes(searchTerm) || description.includes(searchTerm)) {
-          video.classList.remove('hidden');
-        } else {
-          video.classList.add('hidden');
-        }
-      });
-    });
-  </script>
+            if (
+              title.includes(searchTerm) ||
+              description.includes(searchTerm)
+            ) {
+              video.classList.remove("hidden")
+            } else {
+              video.classList.add("hidden")
+            }
+          })
+        })
+    </script>
   </body>
 </html>
