@@ -79,6 +79,19 @@
         background-color: #f9f9f9;
       }
 
+      .video {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+  margin-bottom: 2rem;
+}
+
+/* Classe que será adicionada pelo JavaScript */
+.video.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
       .container {
         max-width: 1200px;
         margin: 40px auto;
@@ -702,5 +715,25 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 })
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const videos = document.querySelectorAll('.video');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  videos.forEach((video) => {
+    observer.observe(video);
+  });
+});
+
+</script>
+
   </body>
 </html>
