@@ -225,7 +225,7 @@ footer {
       </div>
       <div class="video-container">
         <div class="video">
-          <video controls>
+          <video controls controlslist="nodownload">
             <source
               src="./assets/WhatsApp Video 2024-06-11 at 06.51.24.mp4"
               type="video/mp4"
@@ -254,7 +254,7 @@ footer {
           </div>
         </div>
         <div class="video">
-          <video controls>
+          <video controls controlslist="nodownload">
             <source
               src="./assets/WhatsApp Video 2024-06-11 at 06.47.32.mp4"
               type="video/mp4"
@@ -286,7 +286,7 @@ footer {
         <!--  Aqui copia -->
 
         <div class="video">
-          <video controls>
+          <video controls controlslist="nodownload">
             <source
               src="./assets/WhatsApp Video 2024-06-11 at 06.51.24.mp4"
               type="video/mp4"
@@ -315,7 +315,7 @@ footer {
           </div>
         </div>
         <div class="video">
-          <video controls>
+          <video controls controlslist="nodownload">
             <source
               src="./assets/WhatsApp Video 2024-06-11 at 06.47.32.mp4"
               type="video/mp4"
@@ -346,7 +346,7 @@ footer {
         <!--  Aqui Cópia-->
 
         <div class="video">
-          <video controls>
+          <video controls controlslist="nodownload">
             <source
               src="./assets/WhatsApp Video 2024-06-11 at 06.51.24.mp4"
               type="video/mp4"
@@ -374,7 +374,7 @@ footer {
           </div>
         </div>
         <div class="video">
-          <video controls>
+          <video controls controlslist="nodownload">
             <source
               src="./assets/WhatsApp Video 2024-06-11 at 06.47.32.mp4"
               type="video/mp4"
@@ -403,7 +403,7 @@ footer {
         </div>
 
         <div class="video">
-          <video controls>
+          <video controls controlslist="nodownload">
             <source
               src="./assets/WhatsApp Video 2024-06-11 at 06.51.24.mp4"
               type="video/mp4"
@@ -432,7 +432,7 @@ footer {
           </div>
         </div>
         <div class="video">
-          <video controls>
+          <video controls controlslist="nodownload">
             <source
               src="./assets/WhatsApp Video 2024-06-11 at 06.47.32.mp4"
               type="video/mp4"
@@ -462,7 +462,7 @@ footer {
         </div>
 
         <div class="video">
-          <video controls>
+          <video controls controlslist="nodownload">
             <source
               src="./assets/WhatsApp Video 2024-06-11 at 06.51.24.mp4"
               type="video/mp4"
@@ -491,7 +491,7 @@ footer {
           </div>
         </div>
         <div class="video">
-          <video controls>
+          <video controls controlslist="nodownload">
             <source
               src="./assets/WhatsApp Video 2024-06-11 at 06.47.32.mp4"
               type="video/mp4"
@@ -521,7 +521,7 @@ footer {
         </div>
 
         <div class="video">
-          <video controls>
+          <video controls controlslist="nodownload">
             <source
               src="./assets/WhatsApp Video 2024-06-11 at 06.51.24.mp4"
               type="video/mp4"
@@ -549,7 +549,7 @@ footer {
           </div>
         </div>
         <div class="video">
-          <video controls>
+          <video controls controlslist="nodownload">
             <source
               src="./assets/WhatsApp Video 2024-06-11 at 06.47.32.mp4"
               type="video/mp4"
@@ -733,6 +733,40 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+</script>
+
+<script>
+// PROTEÇÃO DE IMAGEM E VIDEO
+
+// Desativa o menu de contexto (botão direito do mouse) para toda a página
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+// Função para desativar toques longos em elementos específicos
+function preventLongPress(element) {
+  element.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 1) {
+      this.touchStartTime = e.timeStamp;
+    }
+  }, { passive: true });
+
+  element.addEventListener('touchend', function(e) {
+    let touchDuration = e.timeStamp - this.touchStartTime;
+    if (touchDuration > 500) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+}
+
+// Aplicar a função nas imagens e vídeos
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('.image-container img');
+  const videos = document.querySelectorAll('video');
+
+  images.forEach(img => preventLongPress(img));
+  videos.forEach(video => preventLongPress(video));
+});
 </script>
 
   </body>
